@@ -1,12 +1,43 @@
 console.log("Script check 1");
 var canvas = document.getElementById("gameboard");
 var ctx = canvas.getContext("2d");
-ctx.fillRect(0, 0, 200, 200);
+gap1 = 200;
 x1 = 0;
 y1 = 0;
-gap1 = 200;
+play1 = 0;
+play2 = 0;
+
+spot1x = 0;
+spot1y = 0;
+
+spot2x = 200;
+spot2y = 0;
+
+spot3x = 400;
+spot3y = 0;
+
+spot4x = 0;
+spot4y = 200;
+
+spot5x = 200;
+spot5y = 200;
+
+spot6x = 400;
+spot6y = 200;
+
+spot7x = 0;
+spot7y = 400;
+
+spot8x = 200;
+spot8y = 400;
+
+spot9x = 400;
+spot9y = 400;
+
+ctx.fillRect(play1, play2, 200, 200);
 console.log(gap1)
 drawboard();
+drawpic();
 function drawboard() {
     while (x1 <= 600) {
         ctx.moveTo(x1, 0);
@@ -18,7 +49,79 @@ function drawboard() {
         ctx.moveTo(0, y1);
         ctx.lineTo(600, y1);
         ctx.stroke();
-        // ctx.strokeStyle = "red";
+        ctx.strokeStyle = "red";
         y1 = y1 + gap1;
     }
+}
+function drawpic() {
+    var pic1 = new Image();
+    pic1.src = "num1.png";
+    ctx.drawImage(pic1,200, 0, 200, 200);
+
+    var pic2 = new Image();
+    pic2.src = "num2.png";
+    ctx.drawImage(pic2,400, 0, 200, 200);
+
+    var pic3 = new Image();
+    pic3.src = "num3.png";
+    ctx.drawImage(pic3,0, 200, 200, 200);
+
+    var pic4 = new Image();
+    pic4.src = "num4.png";
+    ctx.drawImage(pic4,200, 200, 200, 200);
+
+    var pic5 = new Image();
+    pic5.src = "num5.png";
+    ctx.drawImage(pic5,400, 200, 200, 200);
+
+    var pic6 = new Image();
+    pic6.src = "num6.png";
+    ctx.drawImage(pic6,0, 400, 200, 200);
+
+    var pic7 = new Image();
+    pic7.src = "num7.png";
+    ctx.drawImage(pic7,200, 400, 200, 200);
+
+    var pic8 = new Image();
+    pic8.src = "num8.png";
+    ctx.drawImage(pic8,400, 400, 200, 200);
+
+}
+
+
+function moving(move) {
+    ctx.clearRect(play1, play2, 200, 200);
+    if(move === 'up'){
+        console.log("up")
+        play2 = play2 - 200
+    }
+    else if(move === 'down'){
+        console.log("down")
+        play2 = play2 + 200
+    }
+    else if(move === 'left'){
+        console.log("left")
+        play1 = play1 - 200
+    }
+    else if(move === 'right'){
+        console.log("right")
+        play1 = play1 + 200
+    }
+    if (play1 > 400){
+        play1 = 400
+    }
+    else if (play1 < 0){
+        play1 = 0
+    }
+    if (play2 > 400){
+        play2 = 400
+    }
+    else if (play2 < 0){
+        play2 = 0
+    }
+    ctx.fillRect(play1, play2, 200, 200);
+    console.log(play1,play2)
+    drawboard();
+    drawpic();
+
 }
