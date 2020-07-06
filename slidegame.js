@@ -81,7 +81,8 @@ function newgame() {
                 console.log("Spot 9")
             }
 
-        } else {
+        }
+        else {
             console.log("Spot 0")
         }
         taken.sort();
