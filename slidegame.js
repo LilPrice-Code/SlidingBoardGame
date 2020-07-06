@@ -34,6 +34,72 @@ spot8y = 400;
 spot9x = 400;
 spot9y = 400;
 
+function newgame() {
+    Spots = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    taken = []
+    console.log("New Game");
+    console.log(taken);
+    while (Spots !== taken) {
+        random = Math.floor(Math.random() * 10);
+        console.log(random)
+        full = taken.length
+        check = 0
+        if (full !== 0) {
+            for (x = 0; x < full; x++) {
+                if (taken[x] === random) {
+                    check = check + 1
+                }
+            }
+        }
+        if (check === 0) {
+            if (random === 1) {
+                taken.push(random)
+                console.log("Spot 1")
+            } else if (random === 2) {
+                taken.push(random)
+                console.log("Spot 2")
+            } else if (random === 3) {
+                taken.push(random)
+                console.log("Spot 3")
+            } else if (random === 4) {
+                taken.push(random)
+                console.log("Spot 4")
+            } else if (random === 5) {
+                taken.push(random)
+                console.log("Spot 5")
+            } else if (random === 6) {
+                taken.push(random)
+                console.log("Spot 6")
+            } else if (random === 7) {
+                taken.push(random)
+                console.log("Spot 7")
+            } else if (random === 8) {
+                taken.push(random)
+                console.log("Spot 8")
+            } else if (random === 9) {
+                taken.push(random)
+                console.log("Spot 9")
+            }
+
+        } else {
+            console.log("Spot 0")
+        }
+        taken.sort();
+        breakcheck = 0;
+        for (x = 0; x < 9; x++) {
+            next = x + 1
+            if (taken[x] === next) {
+                breakcheck = breakcheck + 1
+            }
+        }
+        if(breakcheck === 9){
+            console.log(taken)
+            console.log(Spots)
+            break;
+        }
+    }
+}
+
 ctx.fillRect(play1, play2, 200, 200);
 console.log(gap1)
 drawboard();
