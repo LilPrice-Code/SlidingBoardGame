@@ -17,3 +17,8 @@ canvas {
     grid-row: 2;
     grid-column: 3;
 }
+.new{
+    position: center;
+    height: 15%;
+    width: 100%;
+}

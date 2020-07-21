@@ -41,7 +41,6 @@ function newgame() {
     console.log(taken);
     while (Spots !== taken) {
         random = Math.floor(Math.random() * 10);
-        console.log(random)
         full = taken.length
         check = 0
         if (full !== 0) {
@@ -191,4 +190,167 @@ function moving(move) {
     drawboard();
     drawpic();
 
+}
+
+function NewCheck() {
+    Spots = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    taken = []
+    Pics = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    Picstaken = []
+    console.log("New Test");
+    console.log(taken);
+    while (Spots !== taken) {
+        random = Math.floor(Math.random() * 10);
+        full = taken.length
+        check = 0
+        if (full !== 0) {
+            for (x = 0; x < full; x++) {
+                if (taken[x] === random) {
+                    check = check + 1
+                }
+            }
+        }
+        if (check === 0) {
+            if (random === 1) {
+                taken.push(random)
+                console.log("Spot 1")
+                random = Math.floor(Math.random() * 10);
+                full = Picstaken.length
+                check = 0
+                if (full !== 0) {
+                    for (x = 0; x < full; x++) {
+                        if (Picstaken[x] === random) {
+                            check = check + 1
+                        }
+                    }
+                }
+                if (check === 0) {
+                    if (random === 1) {
+                        Picstaken.push(random)
+                        console.log("Pic 1")
+                    } else if (random === 2) {
+                        Picstaken.push(random)
+                        console.log("Pic 2")
+                    } else if (random === 3) {
+                        Picstaken.push(random)
+                        console.log("Pic 3")
+                    } else if (random === 4) {
+                        Picstaken.push(random)
+                        console.log("Pic 4")
+                    } else if (random === 5) {
+                        Picstaken.push(random)
+                        console.log("Pic 5")
+                    } else if (random === 6) {
+                        Picstaken.push(random)
+                        console.log("Pic 6")
+                    } else if (random === 7) {
+                        Picstaken.push(random)
+                        console.log("Pic 7")
+                    } else if (random === 8) {
+                        Picstaken.push(random)
+                        console.log("Pic 8")
+                    } else if (random === 9) {
+                        Picstaken.push(random)
+                        console.log("Pic 9")
+                    }
+
+                }
+                else {
+                    console.log("Pic 0")
+                }
+                Picstaken.sort();
+                console.log(Picstaken)
+            }
+            else if (random === 2) {
+                taken.push(random)
+                console.log("Spot 2")
+                random = Math.floor(Math.random() * 10);
+                full = Picstaken.length
+                check = 0
+                if (full !== 0) {
+                    for (x = 0; x < full; x++) {
+                        if (Picstaken[x] === random) {
+                            check = check + 1
+                        }
+                    }
+                }
+                if (check === 0) {
+                    if (random === 1) {
+                        Picstaken.push(random)
+                        console.log("Pic 1")
+                    } else if (random === 2) {
+                        Picstaken.push(random)
+                        console.log("Pic 2")
+                    } else if (random === 3) {
+                        Picstaken.push(random)
+                        console.log("Pic 3")
+                    } else if (random === 4) {
+                        Picstaken.push(random)
+                        console.log("Pic 4")
+                    } else if (random === 5) {
+                        Picstaken.push(random)
+                        console.log("Pic 5")
+                    } else if (random === 6) {
+                        Picstaken.push(random)
+                        console.log("Pic 6")
+                    } else if (random === 7) {
+                        Picstaken.push(random)
+                        console.log("Pic 7")
+                    } else if (random === 8) {
+                        Picstaken.push(random)
+                        console.log("Pic 8")
+                    } else if (random === 9) {
+                        Picstaken.push(random)
+                        console.log("Pic 9")
+                    }
+
+                }
+                else {
+                    console.log("Pic 0")
+                }
+                Picstaken.sort();
+                console.log(Picstaken)
+            } else if (random === 3) {
+                taken.push(random)
+                console.log("Spot 3")
+            } else if (random === 4) {
+                taken.push(random)
+                console.log("Spot 4")
+            } else if (random === 5) {
+                taken.push(random)
+                console.log("Spot 5")
+            } else if (random === 6) {
+                taken.push(random)
+                console.log("Spot 6")
+            } else if (random === 7) {
+                taken.push(random)
+                console.log("Spot 7")
+            } else if (random === 8) {
+                taken.push(random)
+                console.log("Spot 8")
+            } else if (random === 9) {
+                taken.push(random)
+                console.log("Spot 9")
+            }
+
+        }
+        else {
+            console.log("Spot 0")
+        }
+        taken.sort();
+        breakcheck = 0;
+        for (x = 0; x < 9; x++) {
+            next = x + 1
+            if (taken[x] === next) {
+                breakcheck = breakcheck + 1
+            }
+        }
+        if(breakcheck === 9){
+            console.log(taken)
+            console.log(Spots)
+            console.log(Picstaken)
+            console.log(Pics)
+            break;
+        }
+    }
 }
